@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cátedra de Recursos Humanos - Lic. Laura A. Martínez | UNIVERSE</title>
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --light-green: #3CB371;
+            --dark-green: #006400;
+            --accent-green: #90EE90;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+        
+        .institute-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .course-title h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .course-title p {
+            opacity: 0.9;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .professor-info {
+            flex: 1;
+        }
+        
+        .professor-info h2 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .professor-details {
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .detail-icon {
+            width: 24px;
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+        
+        .professor-image {
+            flex: 0 0 200px;
+            height: 200px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-weight: bold;
+            border: 3px solid var(--primary-green);
+        }
+        
+        /* Materials Section */
+        .materials {
+            padding: 3rem 0;
+            background-color: var(--bg-light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark-green);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-green);
+            margin: 10px auto;
+        }
+        
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .unit-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .unit-header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 15px;
+        }
+        
+        .unit-content {
+            padding: 20px;
+        }
+        
+        .resources-list {
+            list-style-type: none;
+        }
+        
+        .resource-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+        
+        .pdf-icon {
+            color: #e74c3c;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: var(--light-green);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--dark-green);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .professor-image {
+                order: -1;
+            }
+            
+            .units-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">U</div>
+                    <div class="institute-name">Instituto UNIVERSE</div>
+                </div>
+                <div class="course-title">
+                    <h1>Recursos Humanos</h1>
+                    <p>Lic. Laura A. Martínez</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="professor-info">
+                    <h2>Bienvenidos a la Cátedra</h2>
+                    <p>Esta plataforma está diseñada para facilitar el acceso a los materiales de estudio organizados por unidades temáticas. Aquí encontrarás todos los recursos necesarios para el desarrollo del curso de Recursos Humanos.</p>
+                    
+                    <div class="professor-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📚</span>
+                            <span>Materiales actualizados y organizados por tema</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🎯</span>
+                            <span>Enfoque práctico y aplicado a contextos reales</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📅</span>
+                            <span>Contenido estructurado para seguimiento semanal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="professor-image">
+                    Lic. Laura A. Martínez
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials">
+        <div class="container">
+            <h2 class="section-title">Materiales de Estudio por Unidad</h2>
+            
+            <div class="units-grid">
+                <!-- Unidad 1 -->
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Unidad 1: Introducción al área de RRHH</h3>
+                    </div>
+                    <div class="unit-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <span class="pdf-icon">📄</span>
+                                <a href="CLASE_UNIDAD_1_Introducción%20al%20área%20de%20R..." style="text-decoration: none; color: inherit;">
+                                    <span>Introducción al área de Recursos Humanos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Unidad 2 -->
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Unidad 2: Reclutamiento y Selección</h3>
+                    </div>
+                    <div class="unit-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <span class="pdf-icon">📄</span>
+                                <a href="CLASE%20UNIDAD%202_REC%20Y%20SEL_parte%201.pdf" style="text-decoration: none; color: inherit;">
+                                    <span>Reclutamiento y Selección - Parte 1</span>
+                                </a>
+                            </li>
+                            <li class="resource-item">
+                                <span class="pdf-icon">📄</span>
+                                <a href="CLASE%20UNIDAD%202_Recl%20y%20Selec_PARTE%202.pdf" style="text-decoration: none; color: inherit;">
+                                    <span>Reclutamiento y Selección - Parte 2</span>
+                                </a>
+                            </li>
+                            <li class="resource-item">
+                                <span class="pdf-icon">📄</span>
+                                <a href="CLASE%20UNIDAD%202_RECLUTAMIENTO%20Y%20SELE..." style="text-decoration: none; color: inherit;">
+                                    <span>Material complementario</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Unidad 3 -->
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Unidad 3: Relaciones Sindicales</h3>
+                    </div>
+                    <div class="unit-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <span class="pdf-icon">📄</span>
+                                <a href="CLASE%20UNIDAD%203_RELACIONES%20SINDICALE..." style="text-decoration: none; color: inherit;">
+                                    <span>Relaciones Sindicales</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Unidad 4 -->
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Unidad 4: Auditoría</h3>
+                    </div>
+                    <div class="unit-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <span class="pdf-icon">📄</span>
+                                <a href="CLASE%20UNIDAD%204_AUDITORIA.pdf" style="text-decoration: none; color: inherit;">
+                                    <span>Auditoría en Recursos Humanos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Unidad 5 -->
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Unidad 5: Rotación de Personal</h3>
+                    </div>
+                    <div class="unit-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <span class="pdf-icon">📄</span>
+                                <a href="Clase%20Uidad%205_Rotación%20de%20Personal.pdf" style="text-decoration: none; color: inherit;">
+                                    <span>Rotación de Personal</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Información de Contacto</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="detail-icon">✉️</span>
+                    <span>laura.martinez@universe.edu</span>
+                </div>
+                <div class="contact-item">
+                    <span class="detail-icon">🏢</span>
+                    <span>Instituto UNIVERSE - Departamento de Administración</span>
+                </div>
+                <div class="contact-item">
+                    <span class="detail-icon">🕒</span>
+                    <span>Horario de consultas: Martes y Jueves 14:00 - 16:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">U</div>
+                <p>Instituto UNIVERSE - Formando profesionales</p>
+                <p>Cátedra de Recursos Humanos - Lic. Laura A. Martínez</p>
+                <p>&copy; 2024 - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
